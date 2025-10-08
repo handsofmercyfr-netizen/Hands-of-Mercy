@@ -182,10 +182,11 @@
 
   <main class="container">
     <section id="donate" class="donation-grid" aria-label="donation options">
+
+      <!-- One-Time Donation -->
       <div class="card" aria-labelledby="one-time">
         <h3 id="one-time" data-i18n="one_time">One-Time Donation — Make a Real Impact Today</h3>
         <p data-i18n="one_time_desc">Every euro counts. Choose a gift that brings hope and help to those in need.</p>
-
         <div class="amounts">
           <a class="amount-btn" href="#" data-amount="10">
             <span>€10</span>
@@ -209,6 +210,35 @@
           </a>
         </div>
       </div>
+
+      <!-- Monthly Donation -->
+      <div class="card" aria-labelledby="monthly">
+        <h3 id="monthly" data-i18n="monthly">Monthly Donation</h3>
+        <p data-i18n="monthly_desc">Small monthly gifts ensure ongoing support and stability.</p>
+        <div class="amounts">
+          <a class="amount-btn" href="#" data-amount="m5">
+            <span>€5</span>
+            <span>Daily snacks</span>
+            <small>Provide daily snacks to children.</small>
+          </a>
+          <a class="amount-btn" href="#" data-amount="m10">
+            <span>€10</span>
+            <span>School supplies</span>
+            <small>Help a child with school materials.</small>
+          </a>
+          <a class="amount-btn" href="#" data-amount="m25">
+            <span>€25</span>
+            <span>Monthly food pack</span>
+            <small>Provide a monthly food pack for a family.</small>
+          </a>
+          <a class="amount-btn" href="#" data-amount="m50">
+            <span>€50</span>
+            <span>Shelter essentials</span>
+            <small>Provide essential items for a safe home.</small>
+          </a>
+        </div>
+      </div>
+
     </section>
   </main>
 
@@ -225,14 +255,16 @@
         donate_now: "👉 Donate Now",
         one_time: "One-Time Donation — Make a Real Impact Today",
         one_time_desc: "Every euro counts. Choose a gift that brings hope and help to those in need.",
-        impact_10: "🍽️ Meal for a child",
-        impact_20: "🧼 Hygiene kit",
-        impact_50: "💊 Medical aid",
-        impact_100: "🏠 Family support",
         small_10: "Provide a nourishing meal and a smile.",
         small_20: "Help a child stay clean, healthy, and safe.",
         small_50: "Cover essential medical treatment for someone in need.",
         small_100: "Provide essential support to an entire family.",
+        monthly: "Monthly Donation",
+        monthly_desc: "Small monthly gifts ensure ongoing support and stability.",
+        small_m5: "Provide daily snacks to children.",
+        small_m10: "Help a child with school materials.",
+        small_m25: "Provide a monthly food pack for a family.",
+        small_m50: "Provide essential items for a safe home.",
         footer_copyright: "© 2025 Hands of Mercy — All rights reserved."
       },
       fr: {
@@ -242,14 +274,16 @@
         donate_now: "👉 Faire un don",
         one_time: "Don ponctuel — Faites un impact réel aujourd'hui",
         one_time_desc: "Chaque euro compte. Choisissez un don qui apporte espoir et aide à ceux qui en ont besoin.",
-        impact_10: "🍽️ Repas pour un enfant",
-        impact_20: "🧼 Kit d'hygiène",
-        impact_50: "💊 Aide médicale",
-        impact_100: "🏠 Soutien familial",
         small_10: "Offrez un repas nourrissant et un sourire.",
         small_20: "Aidez un enfant à rester propre, sain et en sécurité.",
         small_50: "Couvrez les soins médicaux essentiels pour quelqu'un dans le besoin.",
         small_100: "Fournir un soutien essentiel à toute une famille.",
+        monthly: "Don mensuel",
+        monthly_desc: "Les petits dons mensuels assurent un soutien continu et stable.",
+        small_m5: "Fournir des collations quotidiennes aux enfants.",
+        small_m10: "Aidez un enfant avec du matériel scolaire.",
+        small_m25: "Fournir un colis alimentaire mensuel pour une famille.",
+        small_m50: "Fournir des articles essentiels pour un logement sûr.",
         footer_copyright: "© 2025 Hands of Mercy — Tous droits réservés."
       }
     };
@@ -262,16 +296,10 @@
         }
       });
 
-      // עדכון small בתוך הכפתורים
       document.querySelectorAll('.amount-btn').forEach(btn => {
         const amount = btn.getAttribute('data-amount');
-        const smallKey = 'small_' + amount;
-        if(translations[lang][smallKey]){
-          btn.querySelector('small').textContent = translations[lang][smallKey];
-        }
-        // ניתן גם לעדכן את השם עם האימוג'י אם רוצים:
-        if(translations[lang]['impact_' + amount]){
-          btn.querySelectorAll('span')[1].textContent = translations[lang]['impact_' + amount];
+        if(translations[lang]['small_' + amount]){
+          btn.querySelector('small').textContent = translations[lang]['small_' + amount];
         }
       });
 
@@ -279,8 +307,8 @@
     }
 
     setLanguage('en');
-    document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
-    document.getElementById('btn-fr').addEventListener('click', () => setLanguage('fr'));
+    document.getElementById('btn-en').addEventListener('click', ()=>setLanguage('en'));
+    document.getElementById('btn-fr').addEventListener('click', ()=>setLanguage('fr'));
   </script>
 
 </body>
