@@ -13,142 +13,50 @@
       --bg:#f5f7fb;
       --radius:14px;
     }
-    *{box-sizing:border-box;}
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
       background:var(--bg);
       color:#111827;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Language toggle */
     .lang-toggle{
-      position:fixed;
-      left:16px;
-      top:16px;
-      display:flex;
-      gap:8px;
-      align-items:center;
-      z-index:12;
+      position:fixed; left:16px; top:16px; display:flex; gap:8px; align-items:center; z-index:12;
     }
     .lang-toggle button{
-      background:rgba(255,255,255,0.12);
-      color:white;
-      border:0;
-      padding:8px 10px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:600;
+      background:rgba(255,255,255,0.12); color:white; border:0; padding:8px 10px; border-radius:8px; cursor:pointer; font-weight:600;
     }
 
-    /* Logo small fixed */
     .site-logo{
-      position:fixed;
-      top:16px;
-      right:16px;
-      width:60px;
-      height:auto;
-      z-index:10;
+      position:fixed; top:16px; right:16px; width:60px; height:auto; z-index:10;
     }
 
-    /* Header / hero */
     header.site-header{
-      position:relative;
-      min-height:420px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:white;
-      overflow:hidden;
+      position:relative; min-height:420px; display:flex; align-items:center; justify-content:center; text-align:center; color:white; overflow:hidden;
     }
     header.site-header::before{
-      content:"";
-      position:absolute;
-      inset:0;
+      content:""; position:absolute; inset:0;
       background:linear-gradient(135deg, rgba(11,118,201,0.8) 0%, rgba(0,130,150,0.8) 50%, rgba(255,107,107,0.75) 100%), url('hero.jpg') center/cover no-repeat;
       filter:brightness(0.85);
     }
-    .hero-inner{
-      position:relative;
-      max-width:980px;
-      margin:0 auto;
-      padding:40px 20px;
-      z-index:2;
-    }
-    .kicker{
-      font-weight:600;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      font-size:0.9rem;
-    }
-    h1.hero-title{
-      margin:14px 0 10px;
-      font-size:2.4rem;
-      line-height:1.15;
-      font-weight:700;
-    }
-    p.lead{
-      margin:0 auto 20px;
-      max-width:760px;
-      color:rgba(255,255,255,0.92);
-      font-size:1.1rem;
-    }
-    .hero-cta{
-      display:inline-flex;
-      gap:12px;
-      margin-top:14px;
-    }
-    .btn{
-      display:inline-block;
-      padding:12px 20px;
-      border-radius:999px;
-      text-decoration:none;
-      color:white;
-      font-weight:600;
-      cursor:pointer;
-      border:0;
-    }
+    .hero-inner{ position:relative; max-width:980px; margin:0 auto; padding:40px 20px; z-index:2; }
+    .kicker{ font-weight:600; letter-spacing:0.06em; text-transform:uppercase; font-size:0.9rem; }
+    h1.hero-title{ margin:14px 0 10px; font-size:2.4rem; line-height:1.15; font-weight:700; }
+    p.lead{ margin:0 auto 20px; max-width:760px; color:rgba(255,255,255,0.92); font-size:1.1rem; }
+    .hero-cta{ display:inline-flex; gap:12px; margin-top:14px; }
+    .btn{ display:inline-block; padding:12px 20px; border-radius:999px; text-decoration:none; color:white; font-weight:600; cursor:pointer; border:0; }
     .btn-primary{ background:var(--accent); }
 
-    /* Main */
     main.container{ max-width:1100px; margin:-60px auto 60px; padding:0 20px; position:relative; z-index:3; }
-
-    .donation-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:26px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:0 6px 20px rgba(13,26,40,0.08);
-    }
+    .donation-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+    .card{ background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:0 6px 20px rgba(13,26,40,0.08); }
     .card h3{ margin:0 0 12px; font-size:1.25rem; }
     .amounts{ display:flex; flex-direction:column; gap:12px; margin-top:8px; }
-    .amount-btn{
-      display:grid;
-      grid-template-columns:80px 150px 1fr;
-      gap:10px;
-      align-items:center;
-      padding:12px 16px;
-      background:#f4f8ff;
-      border-radius:10px;
-      text-decoration:none;
-      color:var(--accent);
-      font-weight:600;
-    }
+    .amount-btn{ display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f4f8ff; border-radius:10px; text-decoration:none; color:var(--accent); font-weight:600; }
     .amount-btn small{ color:var(--muted); font-weight:500; }
 
-    footer{
-      text-align:center;
-      padding:30px 20px;
-      color:var(--muted);
-      font-size:0.95rem;
-    }
+    footer{ text-align:center; padding:30px 20px; color:var(--muted); font-size:0.95rem; }
 
     @media(max-width:900px){
       .donation-grid{ grid-template-columns:1fr; }
@@ -160,15 +68,16 @@
 </head>
 <body>
 
-  <!-- Language toggle (EN/FR) -->
+  <!-- Language toggle -->
   <div class="lang-toggle">
     <button id="btn-en">EN</button>
     <button id="btn-fr">FR</button>
   </div>
 
-  <!-- Small logo on top-right -->
+  <!-- Logo -->
   <img src="logo.png" alt="Hands of Mercy logo" class="site-logo" id="logo-img">
 
+  <!-- Header -->
   <header class="site-header">
     <div class="hero-inner">
       <div class="kicker" data-i18n="kicker">Hands of Mercy</div>
@@ -180,136 +89,102 @@
     </div>
   </header>
 
+  <!-- Main donation section -->
   <main class="container">
-    <section id="donate" class="donation-grid" aria-label="donation options">
-
-      <!-- One-Time Donation -->
-      <div class="card" aria-labelledby="one-time">
-        <h3 id="one-time" data-i18n="one_time">One-Time Donation — Make a Real Impact Today</h3>
-        <p data-i18n="one_time_desc">Every euro counts. Choose a gift that brings hope and help to those in need.</p>
+    <section id="donate" class="donation-grid">
+      <div class="card">
+        <h3 data-i18n="one_time">One-Time Donation</h3>
+        <p data-i18n="one_time_desc">Choose a gift that feels right. Every euro helps.</p>
         <div class="amounts">
-          <a class="amount-btn" href="#" data-amount="10">
-            <span>€10</span>
-            <span>🍽️ Meal for a child</span>
-            <small>Provide a nourishing meal and a smile.</small>
-          </a>
-          <a class="amount-btn" href="#" data-amount="20">
-            <span>€20</span>
-            <span>🧼 Hygiene kit</span>
-            <small>Help a child stay clean, healthy, and safe.</small>
-          </a>
-          <a class="amount-btn" href="#" data-amount="50">
-            <span>€50</span>
-            <span>💊 Medical aid</span>
-            <small>Cover essential medical treatment for someone in need.</small>
-          </a>
-          <a class="amount-btn" href="#" data-amount="100">
-            <span>€100</span>
-            <span>🏠 Family support</span>
-            <small>Provide essential support to an entire family.</small>
-          </a>
+          <a class="amount-btn" href="#" data-amount="10">Donate €10 <small data-i18n="impact_10">= meal for a child</small></a>
+          <a class="amount-btn" href="#" data-amount="20">Donate €20 <small data-i18n="impact_20">= hygiene kit</small></a>
+          <a class="amount-btn" href="#" data-amount="50">Donate €50 <small data-i18n="impact_50">= medical aid</small></a>
+          <a class="amount-btn" href="#" data-amount="100">Donate €100 <small data-i18n="impact_100">= family support</small></a>
         </div>
       </div>
 
-      <!-- Monthly Donation -->
-      <div class="card" aria-labelledby="monthly">
-        <h3 id="monthly" data-i18n="monthly">Monthly Donation</h3>
+      <div class="card">
+        <h3 data-i18n="monthly">Monthly Donation</h3>
         <p data-i18n="monthly_desc">Small monthly gifts ensure ongoing support and stability.</p>
         <div class="amounts">
-          <a class="amount-btn" href="#" data-amount="m5">
-            <span>€5</span>
-            <span>Daily snacks</span>
-            <small>Provide daily snacks to children.</small>
-          </a>
-          <a class="amount-btn" href="#" data-amount="m10">
-            <span>€10</span>
-            <span>School supplies</span>
-            <small>Help a child with school materials.</small>
-          </a>
-          <a class="amount-btn" href="#" data-amount="m25">
-            <span>€25</span>
-            <span>Monthly food pack</span>
-            <small>Provide a monthly food pack for a family.</small>
-          </a>
-          <a class="amount-btn" href="#" data-amount="m50">
-            <span>€50</span>
-            <span>Shelter essentials</span>
-            <small>Provide essential items for a safe home.</small>
-          </a>
+          <a class="amount-btn" href="#" data-amount="5">Give €5/month <small data-i18n="impact_m5">= daily snacks</small></a>
+          <a class="amount-btn" href="#" data-amount="10">Give €10/month <small data-i18n="impact_m10">= school supplies</small></a>
+          <a class="amount-btn" href="#" data-amount="25">Give €25/month <small data-i18n="impact_m25">= monthly food pack</small></a>
+          <a class="amount-btn" href="#" data-amount="50">Give €50/month <small data-i18n="impact_m50">= shelter essentials</small></a>
         </div>
       </div>
-
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p id="footer-text" data-i18n="footer_copyright">© 2025 Hands of Mercy — All rights reserved.</p>
   </footer>
 
-  <script>
-    const translations = {
-      en: {
-        kicker: "Hands of Mercy",
-        hero_title: "Give Hope. Rebuild Lives.",
-        hero_lead: "Your donation brings food, shelter and care to families who lost everything.",
-        donate_now: "👉 Donate Now",
-        one_time: "One-Time Donation — Make a Real Impact Today",
-        one_time_desc: "Every euro counts. Choose a gift that brings hope and help to those in need.",
-        small_10: "Provide a nourishing meal and a smile.",
-        small_20: "Help a child stay clean, healthy, and safe.",
-        small_50: "Cover essential medical treatment for someone in need.",
-        small_100: "Provide essential support to an entire family.",
-        monthly: "Monthly Donation",
-        monthly_desc: "Small monthly gifts ensure ongoing support and stability.",
-        small_m5: "Provide daily snacks to children.",
-        small_m10: "Help a child with school materials.",
-        small_m25: "Provide a monthly food pack for a family.",
-        small_m50: "Provide essential items for a safe home.",
-        footer_copyright: "© 2025 Hands of Mercy — All rights reserved."
-      },
-      fr: {
-        kicker: "Hands of Mercy",
-        hero_title: "Offrez l’espoir. Reconstruisez des vies.",
-        hero_lead: "Votre don apporte nourriture, abri et soins aux familles qui ont tout perdu.",
-        donate_now: "👉 Faire un don",
-        one_time: "Don ponctuel — Faites un impact réel aujourd'hui",
-        one_time_desc: "Chaque euro compte. Choisissez un don qui apporte espoir et aide à ceux qui en ont besoin.",
-        small_10: "Offrez un repas nourrissant et un sourire.",
-        small_20: "Aidez un enfant à rester propre, sain et en sécurité.",
-        small_50: "Couvrez les soins médicaux essentiels pour quelqu'un dans le besoin.",
-        small_100: "Fournir un soutien essentiel à toute une famille.",
-        monthly: "Don mensuel",
-        monthly_desc: "Les petits dons mensuels assurent un soutien continu et stable.",
-        small_m5: "Fournir des collations quotidiennes aux enfants.",
-        small_m10: "Aidez un enfant avec du matériel scolaire.",
-        small_m25: "Fournir un colis alimentaire mensuel pour une famille.",
-        small_m50: "Fournir des articles essentiels pour un logement sûr.",
-        footer_copyright: "© 2025 Hands of Mercy — Tous droits réservés."
-      }
-    };
-
-    function setLanguage(lang){
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if(translations[lang][key]){
-          el.textContent = translations[lang][key];
-        }
-      });
-
-      document.querySelectorAll('.amount-btn').forEach(btn => {
-        const amount = btn.getAttribute('data-amount');
-        if(translations[lang]['small_' + amount]){
-          btn.querySelector('small').textContent = translations[lang]['small_' + amount];
-        }
-      });
-
-      document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
+  <!-- Translation script -->
+ <script>
+  const translations = {
+    en: {
+      kicker: "Hands of Mercy",
+      hero_title: "Give Hope. Rebuild Lives.",
+      hero_lead: "Your donation brings food, shelter and care to families who lost everything.",
+      donate_now: "👉 Donate Now",
+      one_time: "One-Time Donation",
+      one_time_desc: "Choose a gift that feels right. Every euro helps.",
+      impact_10: "= meal for a child",
+      impact_20: "= hygiene kit",
+      impact_50: "= medical aid",
+      impact_100: "= family support",
+      monthly: "Monthly Donation",
+      monthly_desc: "Small monthly gifts ensure ongoing support and stability.",
+      impact_m5: "= daily snacks",
+      impact_m10: "= school supplies",
+      impact_m25: "= monthly food pack",
+      impact_m50: "= shelter essentials",
+      footer_copyright: "© 2025 Hands of Mercy — All rights reserved."
+    },
+    fr: {
+      kicker: "Hands of Mercy",
+      hero_title: "Offrez l’espoir. Reconstruisez des vies.",
+      hero_lead: "Votre don apporte nourriture, abri et soins aux familles qui ont tout perdu.",
+      donate_now: "👉 Faire un don",
+      one_time: "Don ponctuel",
+      one_time_desc: "Choisissez un montant qui vous convient. Chaque euro compte.",
+      impact_10: "= un repas pour un enfant",
+      impact_20: "= kit d'hygiène",
+      impact_50: "= aide médicale",
+      impact_100: "= soutien familial",
+      monthly: "Don mensuel",
+      monthly_desc: "Les petits dons mensuels assurent un soutien continu et stable.",
+      impact_m5: "= en-cas quotidiens",
+      impact_m10: "= fournitures scolaires",
+      impact_m25: "= colis alimentaire mensuel",
+      impact_m50: "= articles essentiels pour l'abri",
+      footer_copyright: "© 2025 Hands of Mercy — Tous droits réservés."
     }
+  };
 
-    setLanguage('en');
-    document.getElementById('btn-en').addEventListener('click', ()=>setLanguage('en'));
-    document.getElementById('btn-fr').addEventListener('click', ()=>setLanguage('fr'));
-  </script>
+  function setLanguage(lang){
+    // יעדכן את כל האלמנטים עם data-i18n כולל children פנימיים
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(translations[lang][key]){
+        el.textContent = translations[lang][key];
+      }
+    });
+
+    // הגדרת תגית השפה של הדף
+    document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
+  }
+
+  // ברירת מחדל: אנגלית
+  setLanguage('en');
+
+  // לחצני שינוי שפה
+  document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
+  document.getElementById('btn-fr').addEventListener('click', () => setLanguage('fr'));
+</script>
+
 
 </body>
 </html>
