@@ -52,7 +52,7 @@
     .donation-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
     .card{ background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:0 6px 20px rgba(13,26,40,0.08); }
     .card h3{ margin:0 0 12px; font-size:1.25rem; }
-    
+
     /* ---------- כפתורים חדשים ---------- */
     .amounts {
       display:flex;
@@ -94,7 +94,7 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
-    /* אנימציה על הכפתור הכי פופולרי */
+    /* אנימציית pulse */
     .popular {
       animation: pulse 1.5s infinite;
     }
@@ -141,6 +141,28 @@
   <!-- Main donation section -->
   <main class="container">
     <section id="donate" class="donation-grid">
+
+      <!-- הכרטיס החודשי ראשון -->
+      <div class="card">
+        <h3 data-i18n="monthly">Monthly Donation</h3>
+        <p data-i18n="monthly_desc">Small monthly gifts ensure ongoing support and stability.</p>
+        <div class="amounts">
+          <a class="amount-btn popular" href="#" data-amount="10">
+            📚 €10/month <span class="impact" data-i18n="impact_m10">= school supplies</span>
+          </a>
+          <a class="amount-btn" href="#" data-amount="5">
+            🍏 €5/month <span class="impact" data-i18n="impact_m5">= daily snacks</span>
+          </a>
+          <a class="amount-btn" href="#" data-amount="25">
+            🥖 €25/month <span class="impact" data-i18n="impact_m25">= monthly food pack</span>
+          </a>
+          <a class="amount-btn" href="#" data-amount="50">
+            🏠 €50/month <span class="impact" data-i18n="impact_m50">= shelter essentials</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- הכרטיס החד פעמי שני -->
       <div class="card">
         <h3 data-i18n="one_time">One-Time Donation</h3>
         <p data-i18n="one_time_desc">Choose a gift that feels right. Every euro helps.</p>
@@ -160,24 +182,6 @@
         </div>
       </div>
 
-      <div class="card">
-        <h3 data-i18n="monthly">Monthly Donation</h3>
-        <p data-i18n="monthly_desc">Small monthly gifts ensure ongoing support and stability.</p>
-        <div class="amounts">
-          <a class="amount-btn" href="#" data-amount="5">
-            🍏 €5/month <span class="impact" data-i18n="impact_m5">= daily snacks</span>
-          </a>
-          <a class="amount-btn" href="#" data-amount="10">
-            📚 €10/month <span class="impact" data-i18n="impact_m10">= school supplies</span>
-          </a>
-          <a class="amount-btn" href="#" data-amount="25">
-            🥖 €25/month <span class="impact" data-i18n="impact_m25">= Family meal</span>
-          </a>
-          <a class="amount-btn" href="#" data-amount="50">
-            🏠 €50/month <span class="impact" data-i18n="impact_m50">= shelter essentials</span>
-          </a>
-        </div>
-      </div>
     </section>
   </main>
 
@@ -239,10 +243,8 @@
       document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
     }
 
-    // ברירת מחדל: אנגלית
     setLanguage('en');
 
-    // לחצני שינוי שפה
     document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
     document.getElementById('btn-fr').addEventListener('click', () => setLanguage('fr'));
   </script>
