@@ -44,16 +44,51 @@
     .kicker{ font-weight:600; letter-spacing:0.06em; text-transform:uppercase; font-size:0.9rem; }
     h1.hero-title{ margin:14px 0 10px; font-size:2.4rem; line-height:1.15; font-weight:700; }
     p.lead{ margin:0 auto 20px; max-width:760px; color:rgba(255,255,255,0.92); font-size:1.1rem; }
-    .hero-cta{ display:inline-flex; gap:12px; margin-top:14px; }
-    .btn{ display:inline-block; padding:12px 20px; border-radius:999px; text-decoration:none; color:white; font-weight:600; cursor:pointer; border:0; }
-    .btn-primary{ background:var(--accent); }
+
+    .hero-cta{
+      display:inline-flex;
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 20px;
+      border-radius:999px;
+      text-decoration:none;
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      border:0;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+    }
+
+    /* WhatsApp Button */
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-whatsapp:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
 
     main.container{ max-width:1100px; margin:-60px auto 60px; padding:0 20px; position:relative; z-index:3; }
     .donation-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
     .card{ background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:0 6px 20px rgba(13,26,40,0.08); }
     .card h3{ margin:0 0 12px; font-size:1.25rem; }
 
-    /* ---------- כפתורים חדשים ---------- */
+    /* ---------- כפתורי תרומה ---------- */
     .amounts {
       display:flex;
       flex-direction:column;
@@ -134,6 +169,9 @@
       <p class="lead" data-i18n="hero_lead">Your donation brings food, shelter and care to families who lost everything.</p>
       <div class="hero-cta">
         <a href="#donate" class="btn btn-primary" data-i18n="donate_now">👉 Donate Now</a>
+        <a href="https://wa.me/1234567890?text=Hi%20I%20want%20to%20donate" class="btn btn-whatsapp" target="_blank">
+          💬 WhatsApp
+        </a>
       </div>
     </div>
   </header>
@@ -142,42 +180,42 @@
   <main class="container">
     <section id="donate" class="donation-grid">
 
-      <!-- הכרטיס החודשי ראשון -->
+      <!-- כרטיס חודשי ראשון -->
       <div class="card">
         <h3 data-i18n="monthly">Monthly Donation</h3>
         <p data-i18n="monthly_desc">Small monthly gifts ensure ongoing support and stability.</p>
         <div class="amounts">
           <a class="amount-btn" href="#" data-amount="5">
-            🍏 €10/month <span class="impact" data-i18n="impact_m5">= daily snacks</span>
+            🍏 €5/month <span class="impact" data-i18n="impact_m5">= daily snacks</span>
           </a>
           <a class="amount-btn popular" href="#" data-amount="10">
-            📚 €25/month <span class="impact" data-i18n="impact_m10">= school supplies</span>
+            📚 €10/month <span class="impact" data-i18n="impact_m10">= school supplies</span>
           </a>
           <a class="amount-btn" href="#" data-amount="25">
-            🥖 €50/month <span class="impact" data-i18n="impact_m25">= Family meal</span>
+            🥖 €25/month <span class="impact" data-i18n="impact_m25">= Family meal</span>
           </a>
           <a class="amount-btn" href="#" data-amount="50">
-            🏠 €100/month <span class="impact" data-i18n="impact_m50">= shelter essentials</span>
+            🏠 €50/month <span class="impact" data-i18n="impact_m50">= shelter essentials</span>
           </a>
         </div>
       </div>
 
-      <!-- הכרטיס החד פעמי שני -->
+      <!-- כרטיס חד פעמי -->
       <div class="card">
         <h3 data-i18n="one_time">One-Time Donation</h3>
         <p data-i18n="one_time_desc">Choose a gift that feels right. Every euro helps.</p>
         <div class="amounts">
           <a class="amount-btn popular" href="#" data-amount="10">
-            🍽️ €20 <span class="impact" data-i18n="impact_10">= Emergency meal for a child for a week</span>
+            🍽️ €10 <span class="impact" data-i18n="impact_10">= Child Meal</span>
           </a>
           <a class="amount-btn" href="#" data-amount="20">
-            🧼 €50 <span class="impact" data-i18n="impact_20">= Hygiene kit or basic medicine for a child or family</span>
+            🧼 €20 <span class="impact" data-i18n="impact_20">= Hygiene Kit</span>
           </a>
           <a class="amount-btn" href="#" data-amount="50">
-            💊 €100 <span class="impact" data-i18n="impact_50">= Medical support or basic aid for an entire family</span>
+            💊 €50 <span class="impact" data-i18n="impact_50">= Family Aid</span>
           </a>
           <a class="amount-btn" href="#" data-amount="100">
-            🏠 €200 <span class="impact" data-i18n="impact_100">= Comprehensive support package: food, medicine, and family assistance</span>
+            🏠 €100 <span class="impact" data-i18n="impact_100">= Full Support</span>
           </a>
         </div>
       </div>
