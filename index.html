@@ -160,4 +160,33 @@
         impact_m10: "= fournitures scolaires",
         impact_m25: "= colis alimentaire mensuel",
         impact_m50: "= articles essentiels pour l'abri",
-        footer_copyright:
+        footer_copyright: "© 2025 Hands of Mercy — Tous droits réservés."
+      }
+    };
+
+    function setLanguage(lang){
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang][key]){
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      // עדכון child elements בתוך כפתורים (small)
+      document.querySelectorAll('.amount-btn [data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang][key]){
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
+    }
+
+    setLanguage('en'); // ברירת מחדל
+    document.getElementById('btn-en').addEventListener('click', ()=> setLanguage('en'));
+    document.getElementById('btn-fr').addEventListener('click', ()=> setLanguage('fr'));
+  </script>
+
+</body>
+</html>
