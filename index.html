@@ -122,71 +122,68 @@
   </footer>
 
   <!-- Translation script -->
-  <script>
-    const translations = {
-      en: {
-        kicker: "Hands of Mercy",
-        hero_title: "Give Hope. Rebuild Lives.",
-        hero_lead: "Your donation brings food, shelter and care to families who lost everything.",
-        donate_now: "👉 Donate Now",
-        one_time: "One-Time Donation",
-        one_time_desc: "Choose a gift that feels right. Every euro helps.",
-        impact_10: "= meal for a child",
-        impact_20: "= hygiene kit",
-        impact_50: "= medical aid",
-        impact_100: "= family support",
-        monthly: "Monthly Donation",
-        monthly_desc: "Small monthly gifts ensure ongoing support and stability.",
-        impact_m5: "= daily snacks",
-        impact_m10: "= school supplies",
-        impact_m25: "= monthly food pack",
-        impact_m50: "= shelter essentials",
-        footer_copyright: "© 2025 Hands of Mercy — All rights reserved."
-      },
-      fr: {
-        kicker: "Hands of Mercy",
-        hero_title: "Offrez l’espoir. Reconstruisez des vies.",
-        hero_lead: "Votre don apporte nourriture, abri et soins aux familles qui ont tout perdu.",
-        donate_now: "👉 Faire un don",
-        one_time: "Don ponctuel",
-        one_time_desc: "Choisissez un montant qui vous convient. Chaque euro compte.",
-        impact_10: "= un repas pour un enfant",
-        impact_20: "= kit d'hygiène",
-        impact_50: "= aide médicale",
-        impact_100: "= soutien familial",
-        monthly: "Don mensuel",
-        monthly_desc: "Les petits dons mensuels assurent un soutien continu et stable.",
-        impact_m5: "= en-cas quotidiens",
-        impact_m10: "= fournitures scolaires",
-        impact_m25: "= colis alimentaire mensuel",
-        impact_m50: "= articles essentiels pour l'abri",
-        footer_copyright: "© 2025 Hands of Mercy — Tous droits réservés."
-      }
-    };
-
-    function setLanguage(lang){
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if(translations[lang][key]){
-          el.textContent = translations[lang][key];
-        }
-      });
-
-      // עדכון child elements בתוך כפתורים (small)
-      document.querySelectorAll('.amount-btn [data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if(translations[lang][key]){
-          el.textContent = translations[lang][key];
-        }
-      });
-
-      document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
+<script>
+  const translations = {
+    en: {
+      kicker: "Hands of Mercy",
+      hero_title: "Give Hope. Rebuild Lives.",
+      hero_lead: "Your donation brings food, shelter and care to families who lost everything.",
+      donate_now: "👉 Donate Now",
+      one_time: "One-Time Donation",
+      one_time_desc: "Choose a gift that feels right. Every euro helps.",
+      impact_10: "= meal for a child",
+      impact_20: "= hygiene kit",
+      impact_50: "= medical aid",
+      impact_100: "= family support",
+      monthly: "Monthly Donation",
+      monthly_desc: "Small monthly gifts ensure ongoing support and stability.",
+      impact_m5: "= daily snacks",
+      impact_m10: "= school supplies",
+      impact_m25: "= monthly food pack",
+      impact_m50: "= shelter essentials",
+      footer_copyright: "© 2025 Hands of Mercy — All rights reserved."
+    },
+    fr: {
+      kicker: "Hands of Mercy",
+      hero_title: "Offrez l’espoir. Reconstruisez des vies.",
+      hero_lead: "Votre don apporte nourriture, abri et soins aux familles qui ont tout perdu.",
+      donate_now: "👉 Faire un don",
+      one_time: "Don ponctuel",
+      one_time_desc: "Choisissez un montant qui vous convient. Chaque euro compte.",
+      impact_10: "= un repas pour un enfant",
+      impact_20: "= kit d'hygiène",
+      impact_50: "= aide médicale",
+      impact_100: "= soutien familial",
+      monthly: "Don mensuel",
+      monthly_desc: "Les petits dons mensuels assurent un soutien continu et stable.",
+      impact_m5: "= en-cas quotidiens",
+      impact_m10: "= fournitures scolaires",
+      impact_m25: "= colis alimentaire mensuel",
+      impact_m50: "= articles essentiels pour l'abri",
+      footer_copyright: "© 2025 Hands of Mercy — Tous droits réservés."
     }
+  };
 
-    setLanguage('en'); // ברירת מחדל
-    document.getElementById('btn-en').addEventListener('click', ()=> setLanguage('en'));
-    document.getElementById('btn-fr').addEventListener('click', ()=> setLanguage('fr'));
-  </script>
+  function setLanguage(lang){
+    // יעדכן את כל האלמנטים עם data-i18n כולל children פנימיים
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(translations[lang][key]){
+        el.textContent = translations[lang][key];
+      }
+    });
+
+    // הגדרת תגית השפה של הדף
+    document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
+  }
+
+  // ברירת מחדל: אנגלית
+  setLanguage('en');
+
+  // לחצני שינוי שפה
+  document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
+  document.getElementById('btn-fr').addEventListener('click', () => setLanguage('fr'));
+</script>
 
 </body>
 </html>
